@@ -10,7 +10,7 @@ So, fresh off the success of my Binary clock conversion, I decided to put this o
 
 ## Finished Project
 
-When you plug the clock in, it connects to wifi and then to an NTP server. Then it sets several clock settings and synchronizes the clock display to network time. The clock has 12/24 mode, multiple levels of brightness, multiple LED blink rates, and night mode--when the clock will shut itself off between hard-coded night hours to reduce ambient light in the room and reduce energy consumption. As with the binary clock, this clock was converted to be powered via USB through the ESP8266 board. Here's a video of the clock setting it's time:
+When you plug the clock in, it connects to wifi and then to an NTP server. Then it sets several clock settings and synchronizes the clock display to network time. The clock has 12/24 mode, multiple levels of brightness, multiple LED blink rates, and night mode--when the clock will shut itself off between hard-coded night hours to reduce ambient light in the room and reduce energy consumption. As with the binary clock, this clock was converted to be powered via USB through the ESP8266 board. Here's a video of the clock setting its time:
 
 ![](images/TIX-Clock.gif)
 
