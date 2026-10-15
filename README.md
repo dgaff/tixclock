@@ -1,5 +1,7 @@
 # Classic TIX Clock with NTP Synchronization
 
+<a href="https://www.buymeacoffee.com/douggaff" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 I have a thing for interesting clocks, which you can see in my [Binary Clock NTP Project](https://github.com/dgaff/binaryclock). A similar vintage clock I've had for many years is the TIX Clock:
 
 ![](images/tix_clock.jpg)
