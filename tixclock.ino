@@ -1,3 +1,7 @@
+/*
+  DEPRECATED! Original version used with the Arduino IDE.
+*/
+
 #include "NTPClient.h"
 #include "ESP8266WiFi.h"
 #include "WiFiUdp.h"
@@ -339,7 +343,7 @@ void setClockTime(int hour, int minute)
 void setup()
 {
   // Serial port output. Note that GDB isn't working reliably yet.
-#ifdef SERIAL  
+#ifdef DEBUGSERIAL  
   Serial.begin(115200);
 //  gdbstub_init();
 #endif
@@ -482,7 +486,7 @@ void loop()
     // Wait for seconds to roll around to zero. This will sync to NTP time, at least as close as we can get.
     else if (initClockTime == 2 && seconds == 0)
     {
-#ifdef SERIAL
+#ifdef DEBUGSERIAL
       char timestr[10];
 //  Serial.print("\033[0;0H"); // terminal emulation to go to top
 //  sprintf(timestr, "%02d:%02d:%02d", timeClient.getHours(), timeClient.getMinutes(), timeClient.getSeconds());

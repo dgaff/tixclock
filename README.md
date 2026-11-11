@@ -4,7 +4,7 @@
 
 I have a thing for interesting clocks, which you can see in my [Binary Clock NTP Project](https://github.com/dgaff/binaryclock). A similar vintage clock I've had for many years is the TIX Clock:
 
-![](images/tix_clock.jpg)
+![tix clock](images/tix_clock.jpg)
 
 You read the time by counting the number of lit squares for each digit, e.g. it's 12:34 in the picture. To keep things interesting for folks who don't know how to read the clock, the squares change regularly. The clock will still say 12:34, but it will be a different set of dots lit up. This version of the TIX Clock is no longer made, and folks on ebay are selling them for several hundred dollars!! Apparently there's a [version two](https://tixclock.shop/) coming at some point. And, I found a site that does [Tix Clock repairs](https://chronoart.com/TIX.html). There's a lot of love for this clock!
 
@@ -14,7 +14,7 @@ So, fresh off the success of my Binary clock conversion, I decided to put this o
 
 When you plug the clock in, it connects to wifi and then to an NTP server. Then it sets several clock settings and synchronizes the clock display to network time. The clock has 12/24 mode, multiple levels of brightness, multiple LED blink rates, and night mode--when the clock will shut itself off between hard-coded night hours to reduce ambient light in the room and reduce energy consumption. As with the binary clock, this clock was converted to be powered via USB through the ESP8266 board. Here's a video of the clock setting its time:
 
-![](images/TIX-Clock.gif)
+![animated clock](images/TIX-Clock.gif)
 
 # More Detailed Steps
 
@@ -24,9 +24,9 @@ Like the binary clock, this clock was powered by an AC wall wart transformer tha
 
 The other problem with this clock was that the LEDs were really dim after years of use. I decided to swap them out with newer, brighter LEDs that also use less power. You can see the brightness difference in the two photos below. To keep things interesting, I also replaced the red LEDs with white LEDs on the the first digit of the clock hours. This gives each clock digit a different color.
 
-<img src="images/IMG_2852.jpeg" width="400">
+<img src="images/IMG_2852.jpeg" alt="" width="400">
 
-<img src="images/IMG_2861.jpeg" width="400">
+<img src="images/IMG_2861.jpeg" alt="" width="400">
 
 ## Replicating the 60 Hz sine wave
 
@@ -36,7 +36,7 @@ Anyway, to replicate this sine wave, I created a digital pulse train using a tim
 
 I originally try to bit-bang the frequency in the main loop of the code, but I soon realized that wasn't going to work well with all of the delays required after sending other digital signals to control the clock. Thankfully, the Arduino platform supports user-defined interrupts, which I didn't know until I started this project.
 
-<img src="images/IMG_2930.jpeg" width="400">
+<img src="images/IMG_2930.jpeg" alt="" width="400">
 
 ## Prototyping the circuit
 
@@ -46,26 +46,26 @@ I had a second problem when switching off the sine wave digital output in the ES
 
 Finally, the Increment and Mode buttons on the TIX Clock were easily switched digitally from the ESP8266. Logic 0s act as button presses.
 
-<img src="images/IMG_2992.jpeg" width="400">
+<img src="images/IMG_2992.jpeg" alt="" width="400">
 
-<img src="images/IMG_2998.jpeg" width="400">
+<img src="images/IMG_2998.jpeg" alt="" width="400">
 
 ## Removing the old AC components
 
 To make room for the new electronics, I pulled out the AC-to-DC circuit. I needed to remove the power connector anyway, so I decided to pull out the rest, too. That left a place for both the transistor and for the ESP8266 board. The picture below shows all of the components to remove.
 
-<img src="images/IMG_2995.jpeg" width="400">
+<img src="images/IMG_2995.jpeg" alt="" width="400">
 
 ## Permanent wiring of the transistor and diode
 
 I was even more lazy on this one than I was on the binary clock. With all of the extra board space, I decided to just mount the transistor right where the regulator used to be. You can see resistor Rb bulging under heat shrink tubing. The protection diode on the AC sine wave input is also hiding under some heat shrink. I used hot glue to affix and protect everything. Sometimes the simplest solutions are the best!
 
-<img src="images/IMG_2996.jpeg" width="400">
+<img src="images/IMG_2996.jpeg" alt="" width="400">
 
 ## Reassembly
 
 There's a lot of empty space in this case, and the ESP8266 board fit nicely in the corner. As with the binary clock, I hardwired the USB pigtail to the board. We'll see it it holds up over time!
 
-<img src="images/IMG_2999.jpeg" width="400">
+<img src="images/IMG_2999.jpeg" alt="" width="400">
 
-<img src="images/IMG_3002.jpeg" width="400">
+<img src="images/IMG_3002.jpeg" alt="" width="400">
