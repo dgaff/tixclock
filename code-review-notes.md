@@ -33,7 +33,7 @@ A more reliable approach: compute "should be on" from `tm_hour` on every loop, k
 
 (FIXED, although I use an external serial monitor.)Add `monitor_speed = 115200`. The serial monitor defaults to 9600, so your debug output will be garbled.
 
-(SKIPPED for now. Not sure if it matters or not. The differences don't seem material except possibly for upload speed, which I'll check in a future project. See ~/.platformio/platforms/espressif8266/boards/esp12e.json and d1_mini.json and also framework-arduinoespressif8266/variants/nodemcu and variants/d1_mini to study it further.) If the board is a Wemos D1 mini (your pin comments suggest it is), `board = d1_mini` is the exact match.
+(SKIPPED for now. I compared ~/.platformio/platforms/espressif8266/boards/esp12e.json and d1_mini.json and also framework-arduinoespressif8266/variants/nodemcu and variants/d1_mini. There's no material differences. Pin defines D9 and D10 in nodemcu vs. RX and TX in d1_mini. LED_BUILTIN_AUX 16 is defined in node_mcu. And ARDUINO_ESP8266_ESP12 vs. ARDUINO_ESP8266_WEMOS_D1MINI defined.) If the board is a Wemos D1 mini (your pin comments suggest it is), `board = d1_mini` is the exact match.
 
 (SKIPPED) Consider pinning the `platform` version so the build stays reproducible.
 
